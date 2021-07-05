@@ -26,6 +26,6 @@ class TaskEventListener
      */
     public function handle(TaskEvent $event)
     {
-        //
+        dd($event);
     }
 }

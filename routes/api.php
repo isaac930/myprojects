@@ -31,6 +31,7 @@ Route::group([
     Route::get('downloadfile', 'DownloadFileController@downloadfile');
     Route::get('sendsms', 'SmsController@sendsms');
     Route::post('sendemail', 'MailController@sendemail');
+    Route::get('taskevent', 'TaskEventController@gettaskevent');
     
 }
 );
