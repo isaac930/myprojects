@@ -2,11 +2,11 @@
 
 namespace App\Listeners;
 
-use App\Events\TaskEvent;
+use App\Events\TaskAddTwoNumbersEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class TaskEventListener
+class TaskAddTwoNumbersEventListener
 {
     /**
      * Create the event listener.
@@ -21,13 +21,11 @@ class TaskEventListener
     /**
      * Handle the event.
      *
-     * @param  TaskEvent  $event
+     * @param  TaskAddTwoNumbersEvent  $event
      * @return void
      */
-    public function handle(TaskEvent $event)
+    public function handle(TaskAddTwoNumbersEvent $event)
     {
-        dd($event);
-        //load its route in browser to see that it works fine
-        //What ever we want to happen from the task event we do its logic from here
+        //
     }
 }

@@ -25,6 +25,10 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\TaskEventListener',
         ],
 
+        'App\Events\TaskAddTwoNumbersEvent' =>[
+            'App\Listeners\TaskAddTwoNumbersEventListener',
+        ],
+
     ];
 
     /**
@@ -34,6 +38,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        
     }
 }

@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class TaskEventController extends Controller
 {
     public function gettaskevent(){
-        event(new TaskEvent('Hello isaac the event together with the listener works'));
+        event(new TaskEvent('Hello Kirumira Isaac the event together with the listener works'));
     }
 }
