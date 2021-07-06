@@ -19,9 +19,12 @@ class TaskAddTwoNumbersEvent
      *
      * @return void
      */
-    public function __construct()
+    public $sum;
+   
+    public function __construct($sum)
     {
-        //
+        $this->sum = $sum;
+        
     }
 
     /**

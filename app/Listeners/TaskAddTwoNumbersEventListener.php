@@ -13,6 +13,7 @@ class TaskAddTwoNumbersEventListener
      *
      * @return void
      */
+    
     public function __construct()
     {
         //
@@ -26,6 +27,9 @@ class TaskAddTwoNumbersEventListener
      */
     public function handle(TaskAddTwoNumbersEvent $event)
     {
-        //
+        
+       dd($event);
+       
+      
     }
 }

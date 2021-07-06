@@ -11,8 +11,6 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 
-
-
 class SendEmailJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
@@ -24,11 +22,15 @@ class SendEmailJob implements ShouldQueue
      */
     public $email;
     public $mailData;
+   
+   
     
     public function __construct($email,$mailData)
     {
-        $this->email = $email;
-        $this->mailData = $mailData;
+       $this->email = $email;
+       $this->mailData = $mailData;
+
+      
     }
 
     /**
@@ -38,8 +40,8 @@ class SendEmailJob implements ShouldQueue
      */
     public function handle()
     {
-        
-
+        $email = $this->email;
+        $mailData = $this->mailData;
         Mail::to($email)->send(new SignupEmail($mailData));
     }
 }

@@ -4,15 +4,19 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Mail\SignupEmail;
+use App\Jobs\SendEmailJob;
 use App\Exceptions\Handler;
 use Illuminate\Http\Request;
+use App\Events\SendEmailEvent;
 use Illuminate\Support\Facades\Mail;
 use Symfony\Component\HttpFoundation\Response;
-use App\Jobs\SendEmailJob;
+
 
 class MailController extends Controller 
 {
  
+    public $email;
+    public $mailData;
     public static function  sendEmail(Request $request) {
 
         
@@ -28,15 +32,14 @@ class MailController extends Controller
             'body' => $body
         ];
         
-        // Mail::to($email)->send(new SignupEmail($mailData));
+       
 
         $job = (new SendEmailJob($email,$mailData))
 
                          ->delay(Carbon::now()->addSeconds(5));
 
-                dispatch($job);          
-
-    
+                dispatch($job);   
+        
         return response()->json([
             'message' => 'Email has been sent.'
         ], Response::HTTP_OK);

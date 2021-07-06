@@ -3,7 +3,6 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileController;
-
 use App\Http\Controllers\API\MultipleUploadController;
 
 /*
@@ -32,6 +31,7 @@ Route::group([
     Route::get('sendsms', 'SmsController@sendsms');
     Route::post('sendemail', 'MailController@sendemail');
     Route::get('taskevent', 'TaskEventController@gettaskevent');
+    Route::get('taskeventaddnumbers', 'TaskAddTwoNumbersEventController@addnumbers');
     
 }
 );
@@ -52,7 +52,7 @@ return response()->json(['message' => 'Resouce Not Found Or A Given Route Does N
 });
 
 
-
+    
 
 
 

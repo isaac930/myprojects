@@ -29,6 +29,10 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\TaskAddTwoNumbersEventListener',
         ],
 
+        'App\Events\SendEmailEvent' =>[
+            'App\Listeners\TaskSendEmailEventListener',
+        ],
+
     ];
 
     /**
